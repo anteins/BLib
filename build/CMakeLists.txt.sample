@@ -1,0 +1,14 @@
+#begin lua-blib
+set (BLIB_SRC lua-blib/source/blib.c)
+set_property(
+    SOURCE ${BLIB_SRC}
+    APPEND
+    PROPERTY COMPILE_DEFINITIONS
+    LUA_LIB
+)
+list(APPEND THIRDPART_INC  lua-blib/include)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${BLIB_SRC})
+#end lua-blib
+
+
+````添加这一段到xlua/build的CMakeLists.txt上
